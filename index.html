@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes" />
-<title>MR Store - متجر ألعاب</title>
+<title>PS store</title>
 <style>
 :root {
   --bg: #0a0a0a;
-  --card: #111111;
-  --accent: #ff00ff;
-  --gold: #ff00ff;
-  --note: #ff00cc;
-  --muted: #999999;
-  --success: #00ffaa;
+  --card: #0d0d1a;
+  --accent: #0066cc;
+  --gold: #ffcc00;
+  --note: #00aaff;
+  --muted: #8888aa;
+  --success: #00cc66;
   --error: #ff4444;
-  --warning: #ff9800;
-  --neon-pink: #ff00ff;
-  --neon-purple: #9d00ff;
-  --neon-cyan: #00ffff;
+  --warning: #ffaa00;
+  --ps-blue: #003791;
+  --ps-light: #0070cc;
+  --instagram: #e4405f;
 }
 
 * {
@@ -28,7 +28,7 @@
 
 body {
   font-family: "Tajawal", sans-serif;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #0a0a0a 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #001a33 100%);
   color: #fff;
   line-height: 1.5;
   min-height: 100vh;
@@ -36,16 +36,15 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(26,0,51,0.95));
-  padding: 15px 20px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,55,145,0.95));
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--neon-pink);
+  border-bottom: 3px solid var(--ps-blue);
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -54,71 +53,66 @@ header {
   gap: 10px;
   font-size: 24px;
   font-weight: 900;
-  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--ps-light);
   text-decoration: none;
 }
 
 .logo i {
   font-size: 28px;
-  color: var(--neon-pink);
+  color: var(--ps-light);
 }
 
 /* Navigation */
 .main-nav {
-  background: linear-gradient(90deg, rgba(0,0,0,0.95), rgba(26,0,51,0.95));
+  background: linear-gradient(90deg, rgba(0,0,0,0.95), rgba(0,55,145,0.95));
   display: flex;
   justify-content: center;
-  gap: 15px;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px;
   position: sticky;
-  top: 70px;
+  top: 68px;
   z-index: 999;
   flex-wrap: wrap;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,0,255,0.3);
+  border-bottom: 1px solid rgba(0,112,204,0.3);
 }
 
 .nav-btn {
-  background: linear-gradient(135deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1));
+  background: rgba(0,112,204,0.15);
   color: white;
-  padding: 10px 25px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: 800;
-  transition: all 0.3s;
-  border: 2px solid transparent;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
+  gap: 8px;
+  font-size: 15px;
 }
 
 .nav-btn:hover {
-  border-color: var(--neon-pink);
+  background: var(--ps-light);
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(255,0,255,0.3);
 }
 
 .nav-btn.active {
-  background: linear-gradient(135deg, #ff00ff, #9d00ff);
-  border-color: #ff00ff;
-  box-shadow: 0 0 20px rgba(255,0,255,0.4);
+  background: var(--ps-blue);
+  border-color: var(--ps-light);
+  box-shadow: 0 0 15px rgba(0,112,204,0.4);
 }
 
 /* Main Container */
 .main-container {
-  max-width: 1200px;
-  margin: 20px auto;
+  max-width: 1400px;
+  margin: 15px auto;
   padding: 0 20px;
 }
 
 .section {
   display: none;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.25s ease;
 }
 
 .section.active {
@@ -126,637 +120,728 @@ header {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* Card Styles */
 .section-card {
-  background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(26,0,51,0.95));
-  border-radius: 20px;
-  padding: 25px;
-  margin-bottom: 25px;
-  border: 2px solid rgba(255,0,255,0.3);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, rgba(13,13,26,0.95), rgba(0,55,145,0.95));
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0,112,204,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
 }
 
 .section-title {
-  background: linear-gradient(90deg, #ff00ff, #00ffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 28px;
+  color: var(--ps-light);
+  font-size: 24px;
   margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid rgba(255,0,255,0.3);
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(0,112,204,0.3);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .section-title i {
-  font-size: 32px;
-  color: var(--neon-pink);
+  font-size: 26px;
+  color: var(--ps-light);
 }
 
-/* Category Selector for HEN */
-.hen-category-selector {
+/* Console Selector */
+.console-selector {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
   margin-bottom: 25px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hen-category-card {
-  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(255,0,255,0.1));
+.console-card {
+  background: linear-gradient(135deg, rgba(0,55,145,0.3), rgba(0,112,204,0.1));
   border-radius: 15px;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s ease;
   border: 2px solid transparent;
 }
 
-.hen-category-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--neon-pink);
-  box-shadow: 0 10px 25px rgba(255,0,255,0.2);
+.console-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ps-light);
 }
 
-.hen-category-card.active {
-  background: linear-gradient(135deg, #ff00ff, #9d00ff);
-  border-color: #ff00ff;
+.console-card.active {
+  background: linear-gradient(135deg, var(--ps-blue), #0050aa);
+  border-color: var(--ps-light);
 }
 
-.hen-category-icon {
+.console-icon {
   font-size: 48px;
-  margin-bottom: 15px;
-  color: var(--neon-pink);
+  margin-bottom: 10px;
+  color: var(--ps-light);
 }
 
-.hen-category-card.active .hen-category-icon {
+.console-card.active .console-icon {
   color: white;
 }
 
-.hen-category-name {
+.console-name {
   font-size: 22px;
   font-weight: 900;
-  margin-bottom: 8px;
-  color: var(--neon-pink);
+  margin-bottom: 5px;
+  color: var(--ps-light);
 }
 
-.hen-category-card.active .hen-category-name {
+.console-card.active .console-name {
   color: white;
 }
 
-.hen-category-desc {
+.console-price {
   font-size: 14px;
-  color: var(--muted);
+  color: var(--gold);
 }
 
 /* Games Grid */
+.games-container {
+  max-height: 500px;
+  overflow-y: auto;
+  margin: 20px 0;
+  padding: 5px;
+}
+
+.search-section {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--ps-light);
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0,112,204,0.3);
+}
+
+.letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding: 8px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.letter-btn {
+  background: rgba(0,112,204,0.2);
+  border: 1px solid rgba(0,112,204,0.3);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.15s ease;
+}
+
+.letter-btn:hover {
+  background: var(--ps-light);
+  transform: scale(1.05);
+}
+
 .games-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
-  max-height: 500px;
-  overflow-y: auto;
-  padding: 10px;
+  gap: 12px;
 }
 
 .game-card {
-  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(255,0,255,0.05));
+  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,55,145,0.2));
   border-radius: 12px;
-  padding: 15px;
-  border: 2px solid rgba(255,0,255,0.2);
+  padding: 12px 15px;
+  border: 1px solid rgba(0,112,204,0.2);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .game-card:hover {
-  border-color: var(--neon-pink);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255,0,255,0.15);
+  border-color: var(--ps-light);
+  transform: translateY(-2px);
+  background: rgba(0,112,204,0.15);
 }
 
 .game-card.selected {
-  background: linear-gradient(135deg, rgba(0,255,170,0.15), rgba(255,0,255,0.1));
+  background: linear-gradient(135deg, rgba(0,100,255,0.25), rgba(0,55,145,0.3));
   border-color: var(--success);
 }
 
 .game-name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  color: var(--neon-pink);
+  color: var(--ps-light);
 }
 
 .game-price {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
   color: var(--gold);
 }
 
 /* System Files Section */
-.system-files-section {
-  background: linear-gradient(135deg, rgba(255,0,255,0.08), rgba(0,255,255,0.05));
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px 0;
-  border: 2px solid rgba(255,0,255,0.3);
+.files-section {
+  margin-top: 25px;
 }
 
-.system-files-title {
-  color: var(--neon-cyan);
-  font-size: 20px;
+.files-title {
+  color: var(--ps-light);
+  font-size: 18px;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,112,204,0.3);
 }
 
 .files-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
+  gap: 10px;
 }
 
 .file-card {
-  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,255,255,0.05));
-  border-radius: 12px;
-  padding: 15px;
-  border: 2px solid rgba(0,255,255,0.2);
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(0,112,204,0.2);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .file-card:hover {
-  border-color: var(--neon-cyan);
-  transform: translateY(-3px);
+  border-color: var(--ps-light);
+  transform: translateY(-2px);
 }
 
 .file-card.selected {
-  background: linear-gradient(135deg, rgba(0,255,170,0.15), rgba(0,255,255,0.1));
+  background: rgba(0,100,255,0.2);
   border-color: var(--success);
 }
 
 .file-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--neon-cyan);
+  font-size: 13px;
+  font-weight: 600;
+  color: #88aaff;
 }
 
 .file-price {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 900;
   color: var(--gold);
 }
 
 /* Order Summary */
 .order-summary-box {
-  background: linear-gradient(135deg, rgba(0,255,170,0.08), rgba(255,0,255,0.05));
-  padding: 20px;
+  background: rgba(0,55,145,0.2);
+  padding: 15px;
   border-radius: 12px;
   margin: 20px 0;
-  border: 2px solid rgba(255,0,255,0.3);
+  border: 1px solid rgba(0,112,204,0.3);
 }
 
 .summary-title {
   color: var(--success);
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .selected-items {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 200px;
+  max-height: 180px;
   overflow-y: auto;
 }
 
 .selected-items li {
-  padding: 12px;
-  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  background: rgba(0,0,0,0.3);
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 13px;
 }
 
 .total-price {
   color: var(--gold);
   font-weight: 900;
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 2px solid rgba(255,0,255,0.3);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,112,204,0.3);
 }
 
 /* Customer Info */
 .customer-info {
-  background: linear-gradient(135deg, rgba(255,0,255,0.08), rgba(0,255,255,0.05));
-  padding: 20px;
+  background: rgba(0,55,145,0.15);
+  padding: 18px;
   border-radius: 12px;
   margin: 20px 0;
-  border: 2px solid rgba(255,0,255,0.3);
+  border: 1px solid rgba(0,112,204,0.3);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
-  font-weight: 800;
-  color: var(--neon-pink);
-  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(--ps-light);
+  font-size: 13px;
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
+.form-group textarea {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background: rgba(0,0,0,0.5);
-  border: 2px solid rgba(255,0,255,0.3);
-  border-radius: 10px;
+  border: 1px solid rgba(0,112,204,0.3);
+  border-radius: 8px;
   color: white;
-  font-size: 15px;
-  transition: all 0.3s;
-  font-family: "Tajawal", sans-serif;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
+.form-group textarea:focus {
   outline: none;
-  border-color: var(--neon-pink);
-  box-shadow: 0 0 15px rgba(255,0,255,0.2);
+  border-color: var(--ps-light);
 }
 
 .form-group textarea {
-  min-height: 100px;
+  min-height: 80px;
   resize: vertical;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--ps-blue), #0050aa);
+  color: white;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 5px 15px rgba(0,112,204,0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success), #009944);
+  color: white;
+}
+
+.btn-success:hover {
+  box-shadow: 0 5px 15px rgba(0,204,102,0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff4444, #cc3333);
+  color: white;
 }
 
 /* UWallet Section */
 .uwallet-section {
-  background: linear-gradient(135deg, rgba(255,0,255,0.1), rgba(0,255,255,0.05));
-  border: 2px solid var(--neon-pink);
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px 0;
+  background: rgba(0,55,145,0.2);
+  border: 1px solid var(--ps-light);
+  border-radius: 12px;
+  padding: 15px;
+  margin: 15px 0;
   text-align: center;
 }
 
 .uwallet-title {
-  background: linear-gradient(90deg, #ff00ff, #00ffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 22px;
-  margin-bottom: 15px;
+  color: var(--ps-light);
+  font-size: 18px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-}
-
-.uwallet-icon {
-  font-size: 50px;
-  color: #ff00ff;
-  margin: 15px 0;
+  gap: 8px;
 }
 
 .uwallet-username {
-  background: rgba(255,0,255,0.15);
-  padding: 15px;
-  border-radius: 12px;
-  margin: 15px 0;
-  border: 1px solid #ff00ff;
-}
-
-.uwallet-username h3 {
-  color: #ff00ff;
-  margin-bottom: 10px;
-  font-size: 16px;
+  background: rgba(0,0,0,0.3);
+  padding: 12px;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
 .uwallet-name {
   font-size: 28px;
   font-weight: 900;
-  color: #00ffff;
-  text-shadow: 0 0 10px rgba(0,255,255,0.5);
+  color: var(--gold);
   letter-spacing: 2px;
 }
 
 .uwallet-btn {
-  background: linear-gradient(135deg, #ff00ff, #9d00ff);
+  background: var(--ps-blue);
   color: white;
   border: none;
-  padding: 10px 25px;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: 900;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.3s;
-  margin-top: 10px;
+  transition: all 0.2s ease;
 }
 
 .uwallet-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,0,255,0.4);
+  transform: scale(1.03);
+  background: var(--ps-light);
 }
 
-/* Instagram Copy Box */
+/* Instagram Copy */
 .instagram-copy {
-  background: linear-gradient(135deg, rgba(255,0,255,0.1), rgba(0,255,255,0.05));
-  padding: 15px;
-  border-radius: 12px;
+  background: rgba(0,55,145,0.15);
+  padding: 12px;
+  border-radius: 10px;
   margin: 15px 0;
-  border: 2px solid rgba(255,0,255,0.3);
   text-align: center;
+  border: 1px solid rgba(0,112,204,0.3);
 }
 
-.instagram-copy p {
-  color: #fff;
-  margin-bottom: 12px;
-  font-weight: 700;
-  font-size: 14px;
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  padding: 8px 20px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.instagram-link:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(228,64,95,0.3);
 }
 
 .copy-instagram-btn {
-  background: linear-gradient(135deg, #ff00ff, #cc00cc);
+  background: linear-gradient(135deg, #833ab4, #fd1d1d);
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 8px 18px;
+  border-radius: 25px;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s;
-  font-size: 14px;
+  gap: 8px;
+  transition: all 0.2s ease;
+  margin-top: 10px;
 }
 
 .copy-instagram-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,0,255,0.4);
-}
-
-/* Action Buttons */
-.action-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.btn {
-  padding: 15px;
-  border: none;
-  border-radius: 12px;
-  font-weight: 900;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #ff00ff, #9d00ff);
-  color: white;
-}
-
-.btn-primary:hover {
-  box-shadow: 0 8px 20px rgba(255,0,255,0.3);
-}
-
-.btn-success {
-  background: linear-gradient(135deg, #00ffaa, #00cc88);
-  color: #051020;
-}
-
-.btn-success:hover {
-  box-shadow: 0 8px 20px rgba(0,255,170,0.3);
-}
-
-.btn-danger {
-  background: linear-gradient(135deg, #ff4444, #ff3366);
-  color: white;
-}
-
-.btn-danger:hover {
-  box-shadow: 0 8px 20px rgba(255,68,68,0.3);
+  transform: scale(1.03);
 }
 
 /* Note Box */
 .note-box {
-  background: linear-gradient(135deg, rgba(255,0,255,0.08), rgba(0,255,255,0.05));
-  padding: 20px;
-  border-radius: 12px;
-  margin: 20px 0;
-  border-right: 4px solid var(--neon-pink);
+  background: rgba(0,112,204,0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  border-right: 3px solid var(--ps-light);
 }
 
 .note-title {
-  color: var(--neon-pink);
-  font-weight: 900;
-  margin-bottom: 15px;
+  color: var(--ps-light);
+  font-weight: 700;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
-}
-
-/* Letter Navigation */
-.letter-nav {
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
+  font-size: 15px;
+}
+
+.note-box p {
+  font-size: 13px;
+  margin: 5px 0;
+  color: #ccc;
+}
+
+/* AI Chat Section */
+.chat-container {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 85%;
+  animation: messageIn 0.2s ease;
+}
+
+@keyframes messageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  background: rgba(0,0,0,0.3);
-  border-radius: 12px;
-  position: sticky;
-  top: 130px;
-  z-index: 100;
+  font-size: 16px;
+  flex-shrink: 0;
 }
 
-.letter-btn {
-  background: linear-gradient(135deg, rgba(255,0,255,0.2), rgba(0,255,255,0.1));
-  border: 1px solid rgba(255,0,255,0.3);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: all 0.3s;
+.message.user .message-avatar {
+  background: var(--ps-blue);
 }
 
-.letter-btn:hover {
-  background: #ff00ff;
-  transform: scale(1.1);
+.message.bot .message-avatar {
+  background: var(--success);
 }
 
-.search-box {
-  margin-bottom: 20px;
+.message-content {
+  background: rgba(0,0,0,0.6);
+  padding: 10px 14px;
+  border-radius: 15px;
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
-.search-input {
-  width: 100%;
+.message.user .message-content {
+  background: var(--ps-blue);
+  border-bottom-left-radius: 5px;
+}
+
+.message.bot .message-content {
+  background: rgba(0,55,145,0.5);
+  border-bottom-right-radius: 5px;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
   padding: 12px;
   background: rgba(0,0,0,0.5);
-  border: 2px solid #ff00ff;
-  border-radius: 12px;
+  border-top: 1px solid rgba(0,112,204,0.3);
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--ps-light);
+  border-radius: 25px;
   color: white;
-  font-size: 16px;
-}
-
-.search-input:focus {
-  outline: none;
-  box-shadow: 0 0 15px rgba(255,0,255,0.3);
-}
-
-/* Profile Section */
-.profile-header {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.profile-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff00ff, #00ffff);
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  font-weight: 900;
-  color: #000;
-  border: 3px solid #ff00ff;
-  overflow: hidden;
-}
-
-.profile-name {
-  font-size: 24px;
-  font-weight: 900;
-  background: linear-gradient(90deg, #ff00ff, #00ffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 5px;
-}
-
-.profile-email {
-  color: var(--muted);
   font-size: 14px;
 }
 
-.profile-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
-  margin: 25px 0;
+.chat-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0,112,204,0.3);
 }
 
-.stat-card {
-  background: rgba(0,0,0,0.7);
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid rgba(255,0,255,0.2);
+.chat-send-btn {
+  background: var(--ps-blue);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  transition: all 0.2s ease;
 }
 
-.stat-value {
-  font-size: 28px;
-  font-weight: 900;
-  color: #ff00ff;
-  margin-bottom: 5px;
+.chat-send-btn:hover {
+  background: var(--ps-light);
+  transform: scale(1.05);
 }
 
-.stat-label {
-  color: var(--muted);
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.suggestion-btn {
+  background: rgba(0,112,204,0.2);
+  border: 1px solid var(--ps-light);
+  padding: 6px 12px;
+  border-radius: 20px;
   font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: white;
 }
 
+.suggestion-btn:hover {
+  background: var(--ps-light);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background: rgba(0,55,145,0.5);
+  border-radius: 15px;
+  width: fit-content;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-8px); opacity: 1; }
+}
+
+/* Order History */
 .order-history {
-  max-height: 350px;
+  max-height: 300px;
   overflow-y: auto;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .order-card {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.5);
   border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(255,0,255,0.2);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--ps-light);
 }
 
 .order-date {
   color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 8px;
+  font-size: 11px;
+  margin-bottom: 6px;
 }
 
 .order-items {
-  color: #fff;
-  margin-bottom: 8px;
-  font-weight: 700;
-  font-size: 14px;
+  color: white;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 13px;
 }
 
 .order-total {
-  color: #ff00ff;
+  color: var(--gold);
   font-weight: 900;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .copy-btn {
-  background: rgba(255,0,255,0.2);
-  color: #ff00ff;
-  border: 1px solid #ff00ff;
-  padding: 5px 12px;
-  border-radius: 6px;
+  background: rgba(0,112,204,0.2);
+  color: var(--ps-light);
+  border: 1px solid var(--ps-light);
+  padding: 4px 10px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 700;
-  transition: all 0.3s;
-}
-
-.copy-btn:hover {
-  background: #ff00ff;
-  color: #000;
+  font-size: 11px;
+  margin-top: 6px;
 }
 
 /* Modal */
@@ -771,24 +856,23 @@ header {
   z-index: 1002;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .modal-content {
-  background: linear-gradient(135deg, #111, #1a0033);
-  padding: 25px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, #0a0a1a, #001a33);
+  padding: 20px;
+  border-radius: 16px;
   max-width: 500px;
   width: 90%;
   max-height: 85vh;
   overflow-y: auto;
-  border: 3px solid #ff00ff;
-  animation: slideUp 0.3s ease;
-  box-shadow: 0 0 40px rgba(255,0,255,0.2);
+  border: 2px solid var(--ps-light);
+  animation: slideUp 0.2s ease;
 }
 
 @keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
+  from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
@@ -796,36 +880,30 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .modal-title {
-  background: linear-gradient(90deg, #ff00ff, #00ffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 22px;
-  margin: 0;
+  color: var(--ps-light);
+  font-size: 20px;
 }
 
 .close-modal {
   background: none;
   border: none;
-  color: #ff00ff;
-  font-size: 28px;
+  color: var(--ps-light);
+  font-size: 24px;
   cursor: pointer;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: all 0.3s;
 }
 
 .close-modal:hover {
-  background: rgba(255,0,255,0.1);
-  transform: rotate(90deg);
+  background: rgba(0,112,204,0.2);
 }
 
 /* Loading */
@@ -836,20 +914,20 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.95);
+  background: rgba(0,0,0,0.9);
   z-index: 1003;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid #ff00ff;
-  border-top: 4px solid #00ffff;
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--ps-light);
+  border-top: 3px solid transparent;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
@@ -860,151 +938,94 @@ header {
 /* Alerts */
 .alert {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
-  padding: 15px 25px;
-  border-radius: 12px;
+  padding: 12px 20px;
+  border-radius: 10px;
   color: white;
   font-weight: bold;
   z-index: 1004;
-  animation: slideInRight 0.3s ease;
-  max-width: 400px;
+  animation: slideUp 0.2s ease;
+  max-width: 350px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-@keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-.alert-success { background: linear-gradient(135deg, #00ffaa, #00cc88); }
-.alert-error { background: linear-gradient(135deg, #ff4444, #ff3366); }
-.alert-warning { background: linear-gradient(135deg, #ffff00, #ffcc00); color: #000; }
-.alert-info { background: linear-gradient(135deg, #ff00ff, #9d00ff); }
+.alert-success { background: linear-gradient(135deg, var(--success), #008844); }
+.alert-error { background: linear-gradient(135deg, var(--error), #cc3333); }
+.alert-info { background: linear-gradient(135deg, var(--ps-blue), #0050aa); }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 30px 20px;
+  padding: 25px 20px;
   color: var(--muted);
-  margin-top: 40px;
-  border-top: 1px solid rgba(255,0,255,0.2);
-  background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(26,0,51,0.95));
-}
-
-.footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0,112,204,0.2);
+  background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,55,145,0.95));
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin: 20px 0;
+  margin: 15px 0;
   flex-wrap: wrap;
 }
 
 .footer-links a {
-  color: #ff00ff;
+  color: var(--ps-light);
   text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: #00ffff;
+  color: var(--gold);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .main-container {
-    padding: 0 15px;
-  }
-  
-  .section-card {
-    padding: 20px;
-  }
-  
-  .games-grid,
-  .files-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .action-buttons {
-    grid-template-columns: 1fr;
-  }
-  
-  .main-nav {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 10px;
-  }
-  
-  .nav-btn {
-    white-space: nowrap;
-    font-size: 14px;
-    padding: 8px 18px;
-  }
-  
-  header {
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px;
-  }
-  
-  .hen-category-selector {
-    grid-template-columns: 1fr;
-  }
-  
-  .section-title {
-    font-size: 24px;
-  }
-  
-  .letter-nav {
-    gap: 5px;
-  }
-  
-  .letter-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 12px;
-  }
+  .main-container { padding: 0 12px; }
+  .section-card { padding: 15px; }
+  .games-grid { grid-template-columns: 1fr; }
+  .files-grid { grid-template-columns: 1fr; }
+  .action-buttons { flex-direction: column; }
+  .main-nav { justify-content: flex-start; overflow-x: auto; }
+  .nav-btn { white-space: nowrap; font-size: 13px; padding: 8px 15px; }
+  .console-selector { grid-template-columns: 1fr; max-width: 100%; }
+  .letter-btn { width: 30px; height: 30px; font-size: 11px; }
+  .message { max-width: 95%; }
 }
 
 @media (max-width: 480px) {
-  .section-title {
-    font-size: 20px;
-  }
-  
-  .profile-avatar {
-    width: 80px;
-    height: 80px;
-    font-size: 32px;
-  }
-  
-  .logo {
-    font-size: 20px;
-  }
-  
-  .btn {
-    padding: 12px;
-    font-size: 14px;
-  }
-  
-  .uwallet-name {
-    font-size: 22px;
-  }
-  
-  .letter-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
-  }
+  .section-title { font-size: 20px; }
+  .logo { font-size: 18px; }
+  .uwallet-name { font-size: 22px; }
+  .btn { padding: 10px 15px; font-size: 13px; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ps-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ps-blue);
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1013,216 +1034,99 @@ footer {
 
 <!-- Header -->
 <header>
-  <a href="#" class="logo" onclick="showSection('products')">
-    <i class="fas fa-store"></i>
-    <span>MR Store</span>
+  <a href="#" class="logo" onclick="showSection('store')">
+    <i class="fab fa-playstation"></i>
+    <span>PS Store</span>
   </a>
-  
-  <div class="user-section">
-    <!-- بدون زر تسجيل الدخول -->
-  </div>
+  <div class="user-section"></div>
 </header>
 
 <!-- Navigation -->
 <nav class="main-nav">
-  <button class="nav-btn active" onclick="showSection('products')">
-    <i class="fas fa-gamepad"></i>
-    TOP UP
+  <button class="nav-btn active" onclick="showSection('store')">
+    <i class="fas fa-store"></i> المتجر
   </button>
-  <button class="nav-btn" onclick="showSection('hen')">
-    <i class="fas fa-microchip"></i>
-    HEN - اختراق
+  <button class="nav-btn" onclick="showSection('orders')">
+    <i class="fas fa-history"></i> طلباتي
   </button>
-  <button class="nav-btn" onclick="showSection('profile')">
-    <i class="fas fa-user"></i>
-    ملفي
+  <button class="nav-btn" onclick="showSection('chat')">
+    <i class="fas fa-robot"></i> المساعد الذكي
   </button>
 </nav>
 
 <!-- Main Content -->
 <main class="main-container">
   
-  <!-- ========== قسم TOP UP (نفسه مع تعديلات بسيطة) ========== -->
-  <section id="productsSection" class="section active">
+  <!-- ========== قسم المتجر ========== -->
+  <section id="storeSection" class="section active">
     <div class="section-card">
-      <h2 class="section-title"><i class="fas fa-gamepad"></i> TOP UP - شحن رصيد الألعاب</h2>
+      <h2 class="section-title"><i class="fab fa-playstation"></i> متجر PlayStation</h2>
       
-      <div class="category-selector">
-        <div class="category-card active" data-category="games" onclick="selectCategory('games')">
-          <div class="category-icon"><i class="fas fa-gamepad"></i></div>
-          <div class="category-name">الألعاب</div>
-          <div class="category-desc">شحن ألعاب موبايل</div>
+      <!-- اختيار الكونسول -->
+      <div class="console-selector">
+        <div class="console-card active" data-console="ps4" onclick="selectConsole('ps4')">
+          <div class="console-icon"><i class="fab fa-playstation"></i></div>
+          <div class="console-name">PS4</div>
+          <div class="console-price">ألعاب: 2 دينار</div>
         </div>
-        <div class="category-card" data-category="psn" onclick="selectCategory('psn')">
-          <div class="category-icon"><i class="fab fa-playstation"></i></div>
-          <div class="category-name">بطاقات PSN</div>
-          <div class="category-desc">بطاقات بلايستيشن</div>
-        </div>
-      </div>
-      
-      <div class="tax-warning" id="taxWarning" style="display: none;">
-        <i class="fas fa-exclamation-triangle"></i>
-        <p>⚠️ تنبيه: قد يتم تطبيق ضريبة إضافية بسبب الشركات المختصة بالبطاقات الخاصة بـ PlayStation و Roblox</p>
-      </div>
-      
-      <div id="gamesCategory" class="topup-options active">
-        <select class="game-select" id="gameSelect" onchange="selectGame()">
-          <option value="">اختر اللعبة</option>
-          <option value="pubg">PUBG Mobile</option>
-          <option value="freefire">Free Fire</option>
-          <option value="deltaforce">Delta Force Mobile</option>
-          <option value="roblox">Roblox (USA)</option>
-          <option value="newstate">PUBG New State</option>
-          <option value="valorant">Valorant</option>
-          <option value="jwaqer">جواكر</option>
-        </select>
-        <div id="gamePackages" class="packages-grid"></div>
-        <button class="discount-btn" id="gameDiscountBtn" onclick="applyDiscount('game')">
-          <i class="fas fa-tag"></i> تطبيق خصم 1.5% على الألعاب
-        </button>
-      </div>
-      
-      <div id="psnCategory" class="topup-options" style="display: none;">
-        <select class="game-select" id="psnRegion" onchange="selectPSNRegion()">
-          <option value="">اختر نوع PSN</option>
-          <option value="usa">PSN USA</option>
-          <option value="sa">PSN SA</option>
-        </select>
-        <div id="psnPackages" class="packages-grid"></div>
-        <div style="display: flex; gap: 15px; margin: 20px 0;">
-          <button class="discount-btn" id="psnDiscountBtn" onclick="applyDiscount('psn')" style="flex: 1;">
-            <i class="fas fa-tag"></i> خصم 1.5% لـ PSN
-          </button>
-          <select id="psnDelivery" style="flex: 1; padding: 12px; background: rgba(0,0,0,0.5); border: 2px solid #ff00ff; border-radius: 10px; color: white;">
-            <option value="direct">شحن مباشر للحساب</option>
-            <option value="code">استلام كود</option>
-          </select>
+        <div class="console-card" data-console="ps3" onclick="selectConsole('ps3')">
+          <div class="console-icon"><i class="fab fa-playstation"></i></div>
+          <div class="console-name">PS3</div>
+          <div class="console-price">ألعاب: 1 دينار</div>
         </div>
       </div>
       
-      <div class="order-summary-box">
-        <h3 class="summary-title"><i class="fas fa-receipt"></i> ملخص الطلب</h3>
-        <ul class="selected-packages" id="selectedPackages"><li>لم يتم اختيار أي باقة</li></ul>
-        <div class="total-price" id="productsTotal">المجموع: 0.00 د.أ</div>
-      </div>
-      
-      <div class="customer-info">
-        <h3 style="color: #ff00ff; margin-bottom: 20px;"><i class="fas fa-user-circle"></i> معلومات الزبون</h3>
-        <div class="form-group">
-          <label><i class="fas fa-id-card"></i> اسم المستخدم / ID *</label>
-          <input type="text" id="playerId" placeholder="مثال: player123">
-        </div>
-        <div class="form-group">
-          <label><i class="fas fa-user"></i> اسم الزبون *</label>
-          <input type="text" id="customerName" placeholder="الاسم الكامل">
-        </div>
-        <div class="form-group">
-          <label><i class="fas fa-envelope"></i> البريد الإلكتروني *</label>
-          <input type="email" id="orderEmail" placeholder="example@gmail.com">
-        </div>
-        <div class="form-group">
-          <label><i class="fas fa-edit"></i> ملاحظات إضافية</label>
-          <textarea id="orderNotes" placeholder="أي معلومات إضافية تريد إضافتها..."></textarea>
-        </div>
-        <div class="instagram-copy">
-          <p>في حال تأخر التواصل عبر البريد، تواصل معي عبر إنستغرام:</p>
-          <button class="copy-instagram-btn" onclick="copyToClipboard('mrsdfor store')">
-            <i class="fab fa-instagram"></i> نسخ: mrsdfor store
-          </button>
-        </div>
-      </div>
-      
-      <div class="uwallet-section">
-        <h3 class="uwallet-title"><i class="fas fa-wallet"></i> الدفع عبر UWallet</h3>
-        <div class="uwallet-icon"><i class="fas fa-wallet"></i></div>
-        <div class="uwallet-username">
-          <h3>الاسم المستعار للتحويل:</h3>
-          <div class="uwallet-name">MRSDFOR</div>
-          <button class="uwallet-btn" onclick="copyToClipboard('MRSDFOR')">
-            <i class="fas fa-copy"></i> نسخ الاسم
-          </button>
-        </div>
-      </div>
-      
-      <div class="action-buttons">
-        <button class="btn btn-success" onclick="submitOrder()"><i class="fas fa-check-circle"></i> تأكيد الطلب</button>
-        <button class="btn btn-danger" onclick="clearOrder()"><i class="fas fa-trash"></i> مسح الكل</button>
-      </div>
-      
-      <div class="note-box">
-        <h4 class="note-title"><i class="fas fa-info-circle"></i> معلومات هامة</h4>
-        <p>• البريد الإلكتروني للطلبات: <strong>mrsdforstore@gmail.com</strong></p>
-        <p>• وقت التسليم: 5-15 دقيقة بعد التأكد من الدفع</p>
-        <p>• طرق الدفع: UWallet فقط</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- ========== قسم HEN - اختراق PS4 و PS3 ========== -->
-  <section id="henSection" class="section">
-    <div class="section-card">
-      <h2 class="section-title"><i class="fas fa-microchip"></i> HEN - اختراق PS4 / PS3</h2>
-      
-      <!-- اختيار نوع الاختراق -->
-      <div class="hen-category-selector">
-        <div class="hen-category-card active" data-hen="ps4" onclick="selectHenCategory('ps4')">
-          <div class="hen-category-icon"><i class="fab fa-playstation"></i></div>
-          <div class="hen-category-name">PS4</div>
-          <div class="hen-category-desc">اختراق PS4 - ألعاب 2 دينار</div>
-        </div>
-        <div class="hen-category-card" data-hen="ps3" onclick="selectHenCategory('ps3')">
-          <div class="hen-category-icon"><i class="fab fa-playstation"></i></div>
-          <div class="hen-category-name">PS3</div>
-          <div class="hen-category-desc">اختراق PS3 - ألعاب 1 دينار</div>
-        </div>
-      </div>
-      
-      <!-- قسم ملفات تعديل الجهاز -->
-      <div class="system-files-section">
-        <h3 class="system-files-title"><i class="fas fa-cogs"></i> ملفات تعديل الجهاز</h3>
+      <!-- قسم ملفات النظام -->
+      <div class="files-section">
+        <h3 class="files-title"><i class="fas fa-cogs"></i> ملفات تعديل الجهاز - 0.5 دينار</h3>
         <div class="files-grid" id="filesGrid"></div>
       </div>
       
-      <!-- حقل البحث والتصفح بالحروف -->
-      <div class="search-box">
+      <!-- البحث والتصفح -->
+      <div class="search-section">
         <input type="text" class="search-input" id="gameSearch" placeholder="🔍 بحث عن لعبة..." onkeyup="filterGames()">
       </div>
       
       <div class="letter-nav" id="letterNav"></div>
       
       <!-- قائمة الألعاب -->
-      <div class="games-grid" id="gamesGrid"></div>
+      <div class="games-container" id="gamesContainer">
+        <div class="games-grid" id="gamesGrid"></div>
+      </div>
       
       <!-- ملخص الطلب -->
       <div class="order-summary-box">
-        <h3 class="summary-title"><i class="fas fa-receipt"></i> ملخص الطلب</h3>
-        <ul class="selected-items" id="henSelectedItems"><li>لم يتم اختيار أي منتج</li></ul>
-        <div class="total-price" id="henTotalPrice">المجموع: 0.00 د.أ</div>
+        <h3 class="summary-title"><i class="fas fa-receipt"></i> سلة الطلبات</h3>
+        <ul class="selected-items" id="selectedItems"><li>لم يتم اختيار أي منتج</li></ul>
+        <div class="total-price" id="cartTotal">المجموع: 0.00 د.أ</div>
       </div>
       
       <!-- معلومات العميل -->
       <div class="customer-info">
-        <h3 style="color: #ff00ff; margin-bottom: 20px;"><i class="fas fa-user-circle"></i> معلومات الزبون</h3>
+        <h3 style="color: var(--ps-light); margin-bottom: 15px;"><i class="fas fa-user-circle"></i> معلومات الطلب</h3>
         
         <div class="form-group">
-          <label><i class="fas fa-user"></i> اسم الزبون *</label>
-          <input type="text" id="henCustomerName" placeholder="الاسم الكامل">
+          <label><i class="fas fa-user"></i> اسم العميل *</label>
+          <input type="text" id="customerName" placeholder="الاسم الكامل">
         </div>
         
         <div class="form-group">
           <label><i class="fas fa-envelope"></i> البريد الإلكتروني *</label>
-          <input type="email" id="henEmail" placeholder="example@gmail.com">
+          <input type="email" id="customerEmail" placeholder="example@gmail.com">
         </div>
         
         <div class="form-group">
           <label><i class="fas fa-edit"></i> ملاحظات إضافية</label>
-          <textarea id="henNotes" placeholder="أي معلومات إضافية..."></textarea>
+          <textarea id="orderNotes" placeholder="أي معلومات إضافية..."></textarea>
         </div>
         
         <div class="instagram-copy">
-          <p>في حال تأخر التواصل عبر البريد، تواصل معي عبر إنستغرام:</p>
-          <button class="copy-instagram-btn" onclick="copyToClipboard('mrsdfor store')">
-            <i class="fab fa-instagram"></i> نسخ: mrsdfor store
+          <p>📱 تابعنا على إنستغرام:</p>
+          <a href="https://www.instagram.com/mrsdfor/" target="_blank" class="instagram-link">
+            <i class="fab fa-instagram"></i> @mrsdfor
+          </a>
+          <button class="copy-instagram-btn" onclick="copyToClipboard('https://www.instagram.com/mrsdfor/')">
+            <i class="fas fa-copy"></i> نسخ الرابط
           </button>
         </div>
       </div>
@@ -1230,67 +1134,93 @@ footer {
       <!-- UWallet -->
       <div class="uwallet-section">
         <h3 class="uwallet-title"><i class="fas fa-wallet"></i> الدفع عبر UWallet</h3>
-        <div class="uwallet-icon"><i class="fas fa-wallet"></i></div>
         <div class="uwallet-username">
-          <h3>الاسم المستعار للتحويل:</h3>
           <div class="uwallet-name">MRSDFOR</div>
           <button class="uwallet-btn" onclick="copyToClipboard('MRSDFOR')">
-            <i class="fas fa-copy"></i> نسخ الاسم
+            <i class="fas fa-copy"></i> نسخ الاسم المستعار
           </button>
         </div>
+        <p style="font-size: 12px; margin-top: 10px;">📧 للتواصل: mrsdforstore@gmail.com</p>
       </div>
       
       <div class="action-buttons">
-        <button class="btn btn-success" onclick="submitHenOrder()"><i class="fas fa-check-circle"></i> تأكيد الطلب</button>
-        <button class="btn btn-danger" onclick="clearHenSelection()"><i class="fas fa-trash"></i> مسح الكل</button>
+        <button class="btn btn-success" onclick="submitOrder()"><i class="fas fa-check-circle"></i> تأكيد الطلب</button>
+        <button class="btn btn-danger" onclick="clearCart()"><i class="fas fa-trash"></i> مسح السلة</button>
       </div>
       
       <div class="note-box">
         <h4 class="note-title"><i class="fas fa-info-circle"></i> معلومات هامة</h4>
-        <p>• ألعاب PS4: <strong>2 دينار</strong> للعبة الواحدة</p>
-        <p>• ألعاب PS3: <strong>1 دينار</strong> للعبة الواحدة</p>
-        <p>• ملفات تعديل الجهاز: <strong>0.5 دينار</strong> للملف</p>
-        <p>• البريد الإلكتروني: <strong>mrsdforstore@gmail.com</strong></p>
-        <p>• سيتم إرسال روابط التحميل بعد تأكيد الدفع</p>
+        <p>• ألعاب PS4: 2 دينار / لعبة</p>
+        <p>• ألعاب PS3: 1 دينار / لعبة</p>
+        <p>• ملفات التعديل: 0.5 دينار / ملف</p>
+        <p>• 📧 البريد الإلكتروني للطلبات: mrsdforstore@gmail.com</p>
+        <p>• 📱 إنستغرام: @mrsdfor</p>
       </div>
     </div>
   </section>
   
-  <!-- ========== الملف الشخصي ========== -->
-  <section id="profileSection" class="section">
+  <!-- ========== قسم طلباتي ========== -->
+  <section id="ordersSection" class="section">
     <div class="section-card">
-      <div class="profile-header">
-        <div class="profile-avatar" id="profileAvatar"><span id="profileInitials">Z</span></div>
-        <h2 class="profile-name" id="displayName">زائر</h2>
-        <p class="profile-email" id="displayEmail">guest@example.com</p>
-      </div>
-      
-      <div class="profile-stats">
-        <div class="stat-card"><div class="stat-value" id="totalOrders">0</div><div class="stat-label">الطلبات</div></div>
-        <div class="stat-card"><div class="stat-value" id="totalSpent">0.00</div><div class="stat-label">دينار</div></div>
-        <div class="stat-card"><div class="stat-value" id="successRate">100%</div><div class="stat-label">خدمة</div></div>
-      </div>
+      <h2 class="section-title"><i class="fas fa-history"></i> طلباتي السابقة</h2>
       
       <div class="customer-info">
-        <h3 style="color: #ff00ff; margin-bottom: 20px;"><i class="fas fa-edit"></i> معلومات الزائر</h3>
+        <h3 style="color: var(--ps-light); margin-bottom: 15px;"><i class="fas fa-user"></i> بيانات العميل</h3>
         <div class="form-group">
-          <label>الاسم الكامل</label>
-          <input type="text" id="editName" placeholder="اسمك الكامل">
+          <label>اسم العميل</label>
+          <input type="text" id="profileName" placeholder="اسمك">
         </div>
         <div class="form-group">
           <label>البريد الإلكتروني</label>
-          <input type="email" id="editEmail" placeholder="بريدك الإلكتروني">
+          <input type="email" id="profileEmail" placeholder="بريدك الإلكتروني">
         </div>
-        <button class="btn btn-primary" onclick="saveGuestInfo()" style="width: 100%;">
-          <i class="fas fa-save"></i> حفظ المعلومات
+        <button class="btn btn-primary" onclick="saveCustomerProfile()" style="width: 100%;">
+          <i class="fas fa-save"></i> حفظ البيانات
         </button>
       </div>
       
-      <div>
-        <h3 style="color: #ff00ff; margin: 25px 0 15px; font-size: 20px;"><i class="fas fa-history"></i> سجل الطلبات</h3>
-        <div class="order-history" id="orderHistory">
-          <div class="order-card"><div class="order-date">لا توجد طلبات سابقة</div></div>
+      <div class="order-history" id="orderHistory">
+        <div class="order-card"><div class="order-date">لا توجد طلبات سابقة</div></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========== قسم المساعد الذكي ========== -->
+  <section id="chatSection" class="section">
+    <div class="section-card">
+      <h2 class="section-title"><i class="fas fa-robot"></i> المساعد الذكي - PS Helper</h2>
+      
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot">
+            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+            <div class="message-content">🎮 مرحباً بك في PS Store! أنا مساعدك الذكي. كيف يمكنني مساعدتك اليوم؟<br><br>💡 يمكنني:<br>• إعلامك بأسعار الألعاب وملفات التعديل<br>• شرح طريقة الدفع عبر UWallet<br>• مساعدتك في حل المشاكل التقنية<br>• متابعة طلباتك<br>• توجيهك للتواصل مع الدعم</div>
+          </div>
         </div>
+        
+        <div class="chat-input-area">
+          <input type="text" class="chat-input" id="chatInput" placeholder="اكتب سؤالك هنا..." onkeypress="if(event.key==='Enter') sendMessage()">
+          <button class="chat-send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        
+        <div class="chat-suggestions">
+          <button class="suggestion-btn" onclick="quickQuestion('ما هي أسعار الألعاب؟')">💰 أسعار الألعاب</button>
+          <button class="suggestion-btn" onclick="quickQuestion('كيف أشتري ألعاب PS4؟')">🎮 شراء ألعاب PS4</button>
+          <button class="suggestion-btn" onclick="quickQuestion('كيف أدفع عبر UWallet؟')">💳 طريقة الدفع</button>
+          <button class="suggestion-btn" onclick="quickQuestion('ما هي ملفات التعديل؟')">📁 ملفات التعديل</button>
+          <button class="suggestion-btn" onclick="quickQuestion('مشكلة في التحميل أو التثبيت')">⚠️ مشكلة تقنية</button>
+          <button class="suggestion-btn" onclick="quickQuestion('كم مدة التسليم؟')">⏱️ وقت التسليم</button>
+          <button class="suggestion-btn" onclick="quickQuestion('كيف أتواصل مع الدعم؟')">📞 التواصل مع الدعم</button>
+        </div>
+      </div>
+      
+      <div class="note-box">
+        <h4 class="note-title"><i class="fas fa-lightbulb"></i> يمكنني مساعدتك في:</h4>
+        <p>• 🎮 أسعار الألعاب: PS4 (2 دينار) - PS3 (1 دينار)</p>
+        <p>• 📁 ملفات التعديل: 0.5 دينار لكل ملف</p>
+        <p>• 💳 الدفع عبر UWallet: الاسم المستعار MRSDFOR</p>
+        <p>• 📧 البريد الإلكتروني: mrsdforstore@gmail.com</p>
+        <p>• 📱 إنستغرام: @mrsdfor</p>
       </div>
     </div>
   </section>
@@ -1303,16 +1233,15 @@ footer {
       <h3 class="modal-title"><i class="fas fa-check-circle"></i> تأكيد الطلب</h3>
       <button class="close-modal" onclick="closeModal('orderModal')">&times;</button>
     </div>
-    <div id="orderDetails" style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; margin-bottom: 15px; max-height: 300px; overflow-y: auto;"></div>
+    <div id="orderDetails" style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin-bottom: 15px; max-height: 300px; overflow-y: auto; font-size: 13px;"></div>
     <div class="note-box" style="margin-bottom: 15px;">
-      <h4 class="note-title"><i class="fas fa-info-circle"></i> تعليمات</h4>
-      <p>1. انسخ تفاصيل الطلب وأرسلها إلى بريدنا الإلكتروني</p>
-      <p>2. أو اضغط على "فتح البريد" لإرسالها مباشرة</p>
-      <p>3. البريد الإلكتروني: <strong>mrsdforstore@gmail.com</strong></p>
+      <p><strong>📋 تعليمات:</strong> انسخ تفاصيل الطلب وأرسلها إلى بريدنا</p>
+      <p>📧 البريد: <strong>mrsdforstore@gmail.com</strong></p>
+      <p>💳 الدفع عبر UWallet: <strong>MRSDFOR</strong></p>
     </div>
     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-      <button class="btn btn-success" onclick="copyOrder()" style="flex: 1;"><i class="fas fa-copy"></i> نسخ الطلب</button>
-      <button class="btn btn-primary" onclick="openOrderEmail()" style="flex: 1;"><i class="fas fa-envelope"></i> فتح البريد</button>
+      <button class="btn btn-primary" onclick="copyOrder()" style="flex: 1;"><i class="fas fa-copy"></i> نسخ الطلب</button>
+      <button class="btn btn-success" onclick="openOrderEmail()" style="flex: 1;"><i class="fas fa-envelope"></i> إرسال بالبريد</button>
       <button class="btn btn-danger" onclick="closeModal('orderModal')" style="flex: 1;"><i class="fas fa-times"></i> إغلاق</button>
     </div>
   </div>
@@ -1324,21 +1253,19 @@ footer {
 <!-- Footer -->
 <footer>
   <div class="footer-content">
-    <div class="logo" style="justify-content: center; margin-bottom: 15px;">
-      <i class="fas fa-store"></i> <span>MR Store</span>
-    </div>
     <div class="footer-links">
-      <a href="#" onclick="showSection('products')">TOP UP</a>
-      <a href="#" onclick="showSection('hen')">HEN</a>
-      <a href="#" onclick="showSection('profile')">ملفي</a>
+      <a href="#" onclick="showSection('store')">المتجر</a>
+      <a href="#" onclick="showSection('orders')">طلباتي</a>
+      <a href="#" onclick="showSection('chat')">المساعد</a>
     </div>
     <p><i class="fas fa-envelope"></i> mrsdforstore@gmail.com</p>
-    <p style="color: var(--muted); font-size: 12px;">© 2025 MR Store. جميع الحقوق محفوظة.</p>
+    <p><i class="fab fa-instagram"></i> @mrsdfor</p>
+    <p style="font-size: 12px;">© 2025 PS Store - متجر بلايستيشن</p>
   </div>
 </footer>
 
 <script>
-// ================= قائمة الألعاب من A-Z =================
+// ================= قائمة الألعاب =================
 const PS4_GAMES = [
   "Assassin's Creed Valhalla", "Assassin's Creed Odyssey", "Assassin's Creed Origins",
   "Battlefield 2042", "Battlefield V", "Bloodborne", "Borderlands 3",
@@ -1346,20 +1273,18 @@ const PS4_GAMES = [
   "Cyberpunk 2077", "Days Gone", "Death Stranding", "Detroit Become Human",
   "Devil May Cry 5", "Diablo 3", "DOOM Eternal", "Dragon Ball Z Kakarot",
   "Elden Ring", "FIFA 23", "FIFA 22", "Far Cry 6", "Far Cry 5",
-  "Final Fantasy VII Remake", "Fortnite", "Ghost of Tsushima",
-  "God of War", "God of War Ragnarok", "Grand Theft Auto V",
-  "Horizon Forbidden West", "Horizon Zero Dawn", "Infamous Second Son",
-  "Jurassic World Evolution 2", "Just Cause 4", "Kingdom Hearts 3",
-  "The Last of Us Part 1", "The Last of Us Part 2", "Little Big Planet 3",
-  "Marvel Spider Man", "Marvel Spider Man Miles Morales", "Mortal Kombat 11",
-  "Naruto Shippuden Ultimate Ninja Storm 4", "Need for Speed Heat",
+  "Final Fantasy VII Remake", "Ghost of Tsushima", "God of War", "God of War Ragnarok",
+  "Grand Theft Auto V", "Horizon Forbidden West", "Horizon Zero Dawn",
+  "Infamous Second Son", "Jurassic World Evolution 2", "Just Cause 4",
+  "Kingdom Hearts 3", "The Last of Us Part 1", "The Last of Us Part 2",
+  "Little Big Planet 3", "Marvel Spider Man", "Marvel Spider Man Miles Morales",
+  "Mortal Kombat 11", "Naruto Shippuden Ultimate Ninja Storm 4", "Need for Speed Heat",
   "Nioh 2", "Outriders", "Persona 5 Royal", "Red Dead Redemption 2",
-  "Resident Evil Village", "Resident Evil 2 Remake", "Resident Evil 3 Remake",
+  "Resident Evil Village", "Resident Evil 2", "Resident Evil 3",
   "Sekiro Shadows Die Twice", "Shadow of the Tomb Raider",
   "Star Wars Jedi Fallen Order", "Street Fighter V", "Tekken 7",
   "The Witcher 3 Wild Hunt", "Tom Clancy Rainbow Six Siege",
-  "Uncharted 4", "Uncharted Lost Legacy", "Watch Dogs Legion",
-  "Yakuza Like a Dragon", "Zombie Army 4"
+  "Uncharted 4", "Uncharted Lost Legacy", "Watch Dogs Legion", "Yakuza Like a Dragon"
 ];
 
 const PS3_GAMES = [
@@ -1368,238 +1293,99 @@ const PS3_GAMES = [
   "Call of Duty Black Ops", "Call of Duty Black Ops 2", "Call of Duty Modern Warfare 2",
   "Call of Duty Modern Warfare 3", "Dead Space", "Dead Space 2", "Devil May Cry 4",
   "Fallout 3", "Fallout New Vegas", "FIFA 14", "FIFA 15", "Final Fantasy 13",
-  "God of War 3", "God of War Ascension", "Grand Theft Auto IV",
-  "Grand Theft Auto V", "Infamous", "Infamous 2", "Killzone 2", "Killzone 3",
-  "The Last of Us", "Little Big Planet", "Little Big Planet 2",
-  "Metal Gear Solid 4", "Mortal Kombat 9", "Need for Speed Most Wanted",
-  "Need for Speed Rivals", "Prototype", "Prototype 2", "Red Dead Redemption",
-  "Resistance 3", "Resistance Fall of Man", "Resistance 2",
-  "Saints Row The Third", "Saints Row IV", "Sleeping Dogs",
-  "Street Fighter IV", "Super Street Fighter IV", "Tekken 6", "Tekken Tag Tournament 2",
-  "Uncharted Drake's Fortune", "Uncharted 2 Among Thieves", "Uncharted 3 Drake's Deception",
-  "Watch Dogs"
+  "God of War 3", "God of War Ascension", "Grand Theft Auto IV", "Grand Theft Auto V",
+  "Infamous", "Infamous 2", "Killzone 2", "Killzone 3", "The Last of Us",
+  "Little Big Planet", "Little Big Planet 2", "Metal Gear Solid 4",
+  "Mortal Kombat 9", "Need for Speed Most Wanted", "Need for Speed Rivals",
+  "Prototype", "Prototype 2", "Red Dead Redemption", "Resistance 3",
+  "Resistance Fall of Man", "Resistance 2", "Saints Row The Third",
+  "Saints Row IV", "Sleeping Dogs", "Street Fighter IV", "Super Street Fighter IV",
+  "Tekken 6", "Tekken Tag Tournament 2", "Uncharted Drake's Fortune",
+  "Uncharted 2 Among Thieves", "Uncharted 3 Drake's Deception", "Watch Dogs"
 ];
 
-// ملفات تعديل الجهاز
+// ملفات النظام
 const SYSTEM_FILES = [
-  { name: "HEN Payload 4.90", price: 0.5, desc: "ملف تشغيل HEN لـ PS4 4.90" },
-  { name: "HEN Payload 5.05", price: 0.5, desc: "ملف تشغيل HEN لـ PS4 5.05" },
-  { name: "HEN Payload 6.72", price: 0.5, desc: "ملف تشغيل HEN لـ PS4 6.72" },
-  { name: "HEN Payload 7.02", price: 0.5, desc: "ملف تشغيل HEN لـ PS4 7.02" },
-  { name: "HEN Payload 7.55", price: 0.5, desc: "ملف تشغيل HEN لـ PS4 7.55" },
-  { name: "HEN Payload 9.00", price: 0.5, desc: "ملف تشغيل HEN لـ PS4 9.00" },
+  { name: "HEN Payload 4.90", price: 0.5, desc: "تشغيل HEN PS4 4.90" },
+  { name: "HEN Payload 5.05", price: 0.5, desc: "تشغيل HEN PS4 5.05" },
+  { name: "HEN Payload 6.72", price: 0.5, desc: "تشغيل HEN PS4 6.72" },
+  { name: "HEN Payload 7.02", price: 0.5, desc: "تشغيل HEN PS4 7.02" },
+  { name: "HEN Payload 7.55", price: 0.5, desc: "تشغيل HEN PS4 7.55" },
+  { name: "HEN Payload 9.00", price: 0.5, desc: "تشغيل HEN PS4 9.00" },
   { name: "PS3 HEN Toolbox", price: 0.5, desc: "أدوات HEN لـ PS3" },
-  { name: "MultiMAN Full", price: 0.7, desc: "مدير الملفات لـ PS3" },
-  { name: "webMAN MOD", price: 0.3, desc: "أداة تحكم PS3" },
+  { name: "MultiMAN Full", price: 0.5, desc: "مدير الملفات لـ PS3" },
+  { name: "webMAN MOD", price: 0.5, desc: "أداة تحكم PS3" },
+  { name: "PS3 Game Manager", price: 0.5, desc: "إدارة الألعاب PS3" },
+  { name: "PS4 Debug Settings", price: 0.5, desc: "إعدادات تصحيح PS4" },
+  { name: "PS4 FTP Server", price: 0.5, desc: "خادم FTP لـ PS4" }
 ];
 
 // ================= المتغيرات العامة =================
-let currentHenCategory = 'ps4';
-let selectedHenItems = [];
-let guestInfo = { name: '', email: '', orders: [], totalSpent: 0 };
-let selectedCategory = 'games';
-let selectedGame = '';
-let selectedPSNRegion = '';
-let selectedPackages = [];
-let gameDiscountApplied = false;
-let psnDiscountApplied = false;
-let totalPrice = 0;
+let currentConsole = 'ps4';
+let selectedGames = [];
+let selectedFiles = [];
+let customerOrders = [];
 
-// بيانات TOP UP
-const TOPUP_DATA = {
-  games: {
-    pubg: [
-      { name: "30 شدة", price: 0.40, desc: "30 UC" },
-      { name: "60 شدة", price: 0.70, desc: "60 UC" },
-      { name: "300+25 شدة", price: 3.25, desc: "325 UC" },
-      { name: "600+60 شدة", price: 6.35, desc: "660 UC" },
-      { name: "1500+300 شدة", price: 15.70, desc: "1800 UC" }
-    ],
-    freefire: [
-      { name: "110 جواهر", price: 0.75, desc: "110 Diamond" },
-      { name: "231 جوهرة", price: 1.45, desc: "231 Diamond" },
-      { name: "583 جوهرة", price: 3.45, desc: "583 Diamond" },
-      { name: "1188 جوهرة", price: 6.80, desc: "1188 Diamond" },
-      { name: "2420 جوهرة", price: 13.65, desc: "2420 Diamond" },
-      { name: "عضوية اسبوعية", price: 1.75, desc: "مكافأة فورية 100 جوهرة/يومي 50" },
-      { name: "عضوية شهرية", price: 7.75, desc: "فورية 50/يومية 70" },
-      { name: "FIRE PASS", price: 2.50, desc: "FIRE PASS CARD" }
-    ],
-    deltaforce: [
-      { name: "19 ذهبة", price: 0.30, desc: "19 Gold" },
-      { name: "32 ذهبة", price: 0.45, desc: "32 Gold" },
-      { name: "63 ذهبة", price: 0.80, desc: "63 Gold" },
-      { name: "336 ذهبة", price: 4.00, desc: "336 Gold" },
-      { name: "482 ذهبة", price: 5.50, desc: "482 Gold" },
-      { name: "785 ذهبة", price: 7.40, desc: "785 Gold" }
-    ],
-    roblox: [
-      { name: "$10 Gift Card", price: 7.60, desc: "gift card $10" },
-      { name: "$20 Gift Card", price: 14.60, desc: "gift card $20" },
-      { name: "$25 Gift Card", price: 18.00, desc: "gift card $25" },
-      { name: "$40 Gift Card", price: 28.60, desc: "gift card $40" },
-      { name: "$50 Gift Card", price: 35.65, desc: "gift card $50" },
-      { name: "$100 Gift Card", price: 71.00, desc: "gift card $100" }
-    ],
-    newstate: [
-      { name: "300 NC", price: 1.00, desc: "300 NC" },
-      { name: "1500+80 NC", price: 3.80, desc: "1580 NC" },
-      { name: "3600+250 NC", price: 8.90, desc: "3850 NC" },
-      { name: "9300+930 NC", price: 22.50, desc: "10230 NC" }
-    ],
-    valorant: [
-      { name: "475 Points", price: 3.45, desc: "نقاط فالورانت" },
-      { name: "1000 Points", price: 6.85, desc: "نقاط فالورانت" },
-      { name: "2050 Points", price: 13.60, desc: "نقاط فالورانت" },
-      { name: "2580 Points", price: 17.00, desc: "نقاط فالورانت" },
-      { name: "3650 Points", price: 23.80, desc: "نقاط فالورانت" }
-    ],
-    jwaqer: [
-      { name: "10,000 توكنز", price: 0.95, desc: "توكنز جواكر" },
-      { name: "15,000 توكنز", price: 1.25, desc: "توكنز جواكر" },
-      { name: "20,000 توكنز", price: 1.70, desc: "توكنز جواكر" },
-      { name: "25,000 توكنز", price: 2.00, desc: "توكنز جواكر" },
-      { name: "30,000 توكنز", price: 2.50, desc: "توكنز جواكر" },
-      { name: "35,000 توكنز", price: 2.85, desc: "توكنز جواكر" },
-      { name: "40,000 توكنز", price: 3.25, desc: "توكنز جواكر" }
-    ]
-  },
-  psn: {
-    usa: [
-      { name: "$10 PSN USA", price: 7.20, desc: "PSN USA $10" },
-      { name: "$25 PSN USA", price: 17.85, desc: "PSN USA $25" },
-      { name: "$50 PSN USA", price: 32.80, desc: "PSN USA $50" },
-      { name: "$55 PSN USA", price: 39.50, desc: "PSN USA $55" },
-      { name: "$75 PSN USA", price: 53.50, desc: "PSN USA $75" }
-    ],
-    sa: [
-      { name: "$10 PSN SA", price: 8.25, desc: "PSN SA $10" },
-      { name: "$20 PSN SA", price: 15.20, desc: "PSN SA $20" },
-      { name: "$40 PSN SA", price: 30.40, desc: "PSN SA $40" },
-      { name: "$50 PSN SA", price: 37.75, desc: "PSN SA $50" },
-      { name: "$70 PSN SA", price: 52.35, desc: "PSN SA $70" }
-    ]
-  }
-};
-
-// ================= التهيئة =================
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('MR Store - تم التحميل');
-  loadGuestFromStorage();
-  loadGamePackages('pubg');
-  loadHenGames();
-  loadFilesGrid();
-  buildLetterNav();
-  updateOrderSummary();
-});
-
-function loadGuestFromStorage() {
-  const saved = localStorage.getItem('mrStoreGuest');
+// تحميل البيانات من التخزين
+function loadData() {
+  const saved = localStorage.getItem('ps_customer');
   if (saved) {
     try {
-      guestInfo = JSON.parse(saved);
-      updateProfileDisplay();
+      const data = JSON.parse(saved);
+      if (data.name) document.getElementById('profileName').value = data.name;
+      if (data.email) document.getElementById('profileEmail').value = data.email;
+      if (data.orders) customerOrders = data.orders;
+      updateOrderHistory();
     } catch(e) {}
   }
 }
 
-function saveGuestInfo() {
-  const name = document.getElementById('editName').value.trim();
-  const email = document.getElementById('editEmail').value.trim();
-  if (name) guestInfo.name = name;
-  if (email) guestInfo.email = email;
-  localStorage.setItem('mrStoreGuest', JSON.stringify(guestInfo));
-  updateProfileDisplay();
-  showAlert('تم حفظ المعلومات', 'success');
-}
-
-function updateProfileDisplay() {
-  document.getElementById('displayName').innerHTML = guestInfo.name || 'زائر';
-  document.getElementById('displayEmail').innerHTML = guestInfo.email || 'guest@example.com';
-  document.getElementById('profileInitials').innerHTML = (guestInfo.name ? guestInfo.name.charAt(0).toUpperCase() : 'Z');
-  document.getElementById('editName').value = guestInfo.name || '';
-  document.getElementById('editEmail').value = guestInfo.email || '';
-  document.getElementById('totalOrders').innerHTML = guestInfo.orders?.length || 0;
-  document.getElementById('totalSpent').innerHTML = (guestInfo.totalSpent || 0).toFixed(2);
-  updateOrderHistory();
+function saveCustomerProfile() {
+  const name = document.getElementById('profileName').value.trim();
+  const email = document.getElementById('profileEmail').value.trim();
+  localStorage.setItem('ps_customer', JSON.stringify({ name, email, orders: customerOrders }));
+  showAlert('تم حفظ بياناتك بنجاح!', 'success');
 }
 
 function updateOrderHistory() {
   const historyEl = document.getElementById('orderHistory');
-  if (!guestInfo.orders || guestInfo.orders.length === 0) {
+  if (!customerOrders || customerOrders.length === 0) {
     historyEl.innerHTML = '<div class="order-card"><div class="order-date">لا توجد طلبات سابقة</div></div>';
     return;
   }
   historyEl.innerHTML = '';
-  [...guestInfo.orders].reverse().forEach(order => {
+  [...customerOrders].reverse().forEach(order => {
     historyEl.innerHTML += `
       <div class="order-card">
         <div class="order-date">${new Date(order.date).toLocaleString('ar-JO')}</div>
-        <div class="order-items">${order.items || 'طلب'}</div>
+        <div class="order-items">${order.items}</div>
         <div class="order-total">${order.total.toFixed(2)} د.أ</div>
-        <button class="copy-btn" onclick="copyOrderText('${order.id}')" style="margin-top: 8px;"><i class="fas fa-copy"></i> نسخ</button>
+        <button class="copy-btn" onclick="copyOrderDetails('${order.id}')"><i class="fas fa-copy"></i> نسخ التفاصيل</button>
       </div>
     `;
   });
 }
 
-function copyOrderText(id) {
-  const order = guestInfo.orders.find(o => o.id == id);
+function copyOrderDetails(id) {
+  const order = customerOrders.find(o => o.id == id);
   if (order) copyToClipboard(order.details);
 }
 
-// ================= قسم HEN =================
-function selectHenCategory(category) {
-  currentHenCategory = category;
-  document.querySelectorAll('.hen-category-card').forEach(c => c.classList.remove('active'));
-  document.querySelector(`.hen-category-card[data-hen="${category}"]`).classList.add('active');
-  loadHenGames();
-  updateHenSummary();
-}
-
-function loadFilesGrid() {
-  const container = document.getElementById('filesGrid');
-  container.innerHTML = '';
-  SYSTEM_FILES.forEach(file => {
-    const card = document.createElement('div');
-    card.className = 'file-card';
-    card.setAttribute('data-name', file.name);
-    card.setAttribute('data-price', file.price);
-    card.setAttribute('data-desc', file.desc);
-    card.innerHTML = `
-      <span class="file-name"><i class="fas fa-file-alt"></i> ${file.name}</span>
-      <span class="file-price">${file.price.toFixed(2)} د.أ</span>
-    `;
-    card.onclick = () => toggleHenItem({ id: file.name, name: file.name, price: file.price, desc: file.desc, type: 'file' }, card);
-    container.appendChild(card);
-  });
-}
-
-function getGamesList() {
-  return currentHenCategory === 'ps4' ? [...PS4_GAMES] : [...PS3_GAMES];
+// ========== قسم المتجر ==========
+function selectConsole(console) {
+  currentConsole = console;
+  document.querySelectorAll('.console-card').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.console-card[data-console="${console}"]`).classList.add('active');
+  filterGames();
+  updateCartSummary();
 }
 
 function getGamePrice() {
-  return currentHenCategory === 'ps4' ? 2.0 : 1.0;
+  return currentConsole === 'ps4' ? 2.0 : 1.0;
 }
 
-function loadHenGames() {
-  const games = getGamesList();
-  const container = document.getElementById('gamesGrid');
-  container.innerHTML = '';
-  games.forEach(game => {
-    const price = getGamePrice();
-    const card = document.createElement('div');
-    card.className = 'game-card';
-    card.setAttribute('data-name', game);
-    card.setAttribute('data-price', price);
-    card.innerHTML = `
-      <span class="game-name"><i class="fas fa-gamepad"></i> ${game}</span>
-      <span class="game-price">${price.toFixed(2)} د.أ</span>
-    `;
-    card.onclick = () => toggleHenItem({ id: game, name: game, price: price, desc: `لعبة ${currentHenCategory === 'ps4' ? 'PS4' : 'PS3'}`, type: 'game' }, card);
-    container.appendChild(card);
-  });
+function getGamesList() {
+  return currentConsole === 'ps4' ? [...PS4_GAMES] : [...PS3_GAMES];
 }
 
 function buildLetterNav() {
@@ -1623,10 +1409,8 @@ function scrollToLetter(letter) {
     const cards = container.children;
     if (cards[index]) {
       cards[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
-      cards[index].style.background = 'rgba(255,0,255,0.3)';
-      setTimeout(() => {
-        cards[index].style.background = '';
-      }, 1000);
+      cards[index].style.background = 'rgba(0,112,204,0.3)';
+      setTimeout(() => { cards[index].style.background = ''; }, 800);
     }
   }
 }
@@ -1641,277 +1425,246 @@ function filterGames() {
     const card = document.createElement('div');
     card.className = 'game-card';
     card.setAttribute('data-name', game);
-    card.setAttribute('data-price', price);
-    card.innerHTML = `
-      <span class="game-name"><i class="fas fa-gamepad"></i> ${game}</span>
-      <span class="game-price">${price.toFixed(2)} د.أ</span>
-    `;
-    card.onclick = () => toggleHenItem({ id: game, name: game, price: price, desc: `لعبة ${currentHenCategory === 'ps4' ? 'PS4' : 'PS3'}`, type: 'game' }, card);
-    if (selectedHenItems.find(i => i.id === game)) card.classList.add('selected');
+    card.innerHTML = `<span class="game-name"><i class="fas fa-gamepad"></i> ${game}</span><span class="game-price">${price.toFixed(2)} د.أ</span>`;
+    card.onclick = () => toggleGame(game, price, card);
+    if (selectedGames.includes(game)) card.classList.add('selected');
     container.appendChild(card);
   });
 }
 
-function toggleHenItem(item, card) {
-  const exists = selectedHenItems.find(i => i.id === item.id);
-  if (exists) {
-    selectedHenItems = selectedHenItems.filter(i => i.id !== item.id);
-    card.classList.remove('selected');
-  } else {
-    selectedHenItems.push(item);
-    card.classList.add('selected');
-  }
-  updateHenSummary();
+function loadFilesGrid() {
+  const container = document.getElementById('filesGrid');
+  container.innerHTML = '';
+  SYSTEM_FILES.forEach(file => {
+    const card = document.createElement('div');
+    card.className = 'file-card';
+    card.setAttribute('data-name', file.name);
+    card.innerHTML = `<span class="file-name"><i class="fas fa-file-alt"></i> ${file.name}</span><span class="file-price">${file.price.toFixed(2)} د.أ</span>`;
+    card.onclick = () => toggleFile(file, card);
+    if (selectedFiles.find(f => f.name === file.name)) card.classList.add('selected');
+    container.appendChild(card);
+  });
 }
 
-function updateHenSummary() {
-  const list = document.getElementById('henSelectedItems');
-  const totalEl = document.getElementById('henTotalPrice');
-  if (selectedHenItems.length === 0) {
-    list.innerHTML = '<li>لم يتم اختيار أي منتج</li>';
+function toggleGame(game, price, card) {
+  if (selectedGames.includes(game)) {
+    selectedGames = selectedGames.filter(g => g !== game);
+    card.classList.remove('selected');
+  } else {
+    selectedGames.push(game);
+    card.classList.add('selected');
+  }
+  updateCartSummary();
+}
+
+function toggleFile(file, card) {
+  if (selectedFiles.find(f => f.name === file.name)) {
+    selectedFiles = selectedFiles.filter(f => f.name !== file.name);
+    card.classList.remove('selected');
+  } else {
+    selectedFiles.push(file);
+    card.classList.add('selected');
+  }
+  updateCartSummary();
+}
+
+function updateCartSummary() {
+  const list = document.getElementById('selectedItems');
+  const totalEl = document.getElementById('cartTotal');
+  const gamePrice = getGamePrice();
+  const gamesTotal = selectedGames.length * gamePrice;
+  const filesTotal = selectedFiles.reduce((s, f) => s + f.price, 0);
+  const total = gamesTotal + filesTotal;
+  
+  if (selectedGames.length === 0 && selectedFiles.length === 0) {
+    list.innerHTML = '<li>⚠️ لم يتم اختيار أي منتج</li>';
     totalEl.innerHTML = 'المجموع: 0.00 د.أ';
     return;
   }
-  const total = selectedHenItems.reduce((s, i) => s + i.price, 0);
+  
   list.innerHTML = '';
-  selectedHenItems.forEach(i => {
-    list.innerHTML += `<li><div><div style="font-weight:bold;color:#ff00ff">${i.name}</div><div style="font-size:12px;color:var(--muted)">${i.desc}</div></div><div style="color:var(--gold);font-weight:bold">${i.price.toFixed(2)} د.أ</div></li>`;
+  selectedGames.forEach(g => {
+    list.innerHTML += `<li><div><i class="fas fa-gamepad"></i> ${g}</div><div class="game-price">${gamePrice.toFixed(2)} د.أ</div></li>`;
   });
-  totalEl.innerHTML = `المجموع: ${total.toFixed(2)} د.أ`;
+  selectedFiles.forEach(f => {
+    list.innerHTML += `<li><div><i class="fas fa-file-alt"></i> ${f.name}</div><div class="game-price">${f.price.toFixed(2)} د.أ</div></li>`;
+  });
+  totalEl.innerHTML = `💰 المجموع: ${total.toFixed(2)} د.أ`;
 }
 
-function clearHenSelection() {
-  if (confirm('مسح جميع المنتجات المختارة؟')) {
-    selectedHenItems = [];
+function clearCart() {
+  if (confirm('⚠️ هل أنت متأكد من مسح جميع المنتجات من السلة؟')) {
+    selectedGames = [];
+    selectedFiles = [];
     document.querySelectorAll('.game-card, .file-card').forEach(c => c.classList.remove('selected'));
-    updateHenSummary();
-    showAlert('تم مسح الكل', 'success');
-  }
-}
-
-function submitHenOrder() {
-  const name = document.getElementById('henCustomerName').value.trim();
-  const email = document.getElementById('henEmail').value.trim();
-  if (!name || !email) { showAlert('املأ جميع الحقول', 'error'); return; }
-  if (!validateEmail(email)) { showAlert('بريد إلكتروني غير صحيح', 'error'); return; }
-  if (selectedHenItems.length === 0) { showAlert('اختر منتجاً واحداً على الأقل', 'error'); return; }
-  
-  const total = selectedHenItems.reduce((s, i) => s + i.price, 0);
-  let details = `💻 **طلب HEN جديد من MR Store**\n\n📅 **التاريخ:** ${new Date().toLocaleString('ar-JO')}\n\n`;
-  details += `👤 **معلومات الزبون:**\n👨 **اسم الزبون:** ${name}\n📧 **البريد:** ${email}\n\n`;
-  details += `🛒 **المنتجات المختارة:**\n`;
-  selectedHenItems.forEach((i, idx) => {
-    details += `\n${idx+1}. **${i.name}**\n   📝 ${i.desc}\n   💰 ${i.price.toFixed(2)} د.أ\n`;
-  });
-  details += `\n💰 **المجموع:** ${total.toFixed(2)} دينار أردني\n\n`;
-  details += `---\n💳 **طريقة الدفع:** UWallet\n👤 **الاسم المستعار:** MRSDFOR\n📱 **إنستغرام:** mrsdfor store\n📧 **البريد:** mrsdforstore@gmail.com`;
-  
-  document.getElementById('orderDetails').innerHTML = `<pre style="white-space:pre-wrap;font-size:13px;line-height:1.5">${details}</pre>`;
-  document.getElementById('orderModal').style.display = 'flex';
-  
-  const order = { id: Date.now(), details: details, total: total, date: new Date().toISOString(), items: name };
-  guestInfo.orders = guestInfo.orders || [];
-  guestInfo.orders.push(order);
-  guestInfo.totalSpent = (guestInfo.totalSpent || 0) + total;
-  localStorage.setItem('mrStoreGuest', JSON.stringify(guestInfo));
-  updateProfileDisplay();
-  clearHenSelection();
-}
-
-// ================= وظائف TOP UP =================
-function selectCategory(category) {
-  selectedCategory = category;
-  document.querySelectorAll('.category-card').forEach(c => c.classList.remove('active'));
-  document.querySelector(`.category-card[data-category="${category}"]`).classList.add('active');
-  if (category === 'games') {
-    document.getElementById('gamesCategory').style.display = 'block';
-    document.getElementById('psnCategory').style.display = 'none';
-    document.getElementById('taxWarning').style.display = 'none';
-  } else {
-    document.getElementById('gamesCategory').style.display = 'none';
-    document.getElementById('psnCategory').style.display = 'block';
-    document.getElementById('taxWarning').style.display = 'block';
-  }
-  resetProductSelection();
-}
-
-function loadGamePackages(gameId) {
-  const packages = TOPUP_DATA.games[gameId];
-  const container = document.getElementById('gamePackages');
-  if (!packages || packages.length === 0) {
-    container.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:30px;color:var(--muted);"><i class="fas fa-exclamation-circle" style="font-size:40px"></i><p>لا توجد باقات</p></div>';
-    return;
-  }
-  container.innerHTML = '';
-  packages.forEach(pkg => {
-    const priceText = pkg.price > 0 ? `${pkg.price.toFixed(2)} د.أ` : 'مجاناً';
-    const card = document.createElement('div');
-    card.className = 'package-card';
-    card.setAttribute('data-name', pkg.name);
-    card.setAttribute('data-price', pkg.price);
-    card.innerHTML = `<div class="package-name">${pkg.name}</div><div class="package-price">${priceText}</div><div class="package-desc">${pkg.desc || ''}</div>`;
-    card.onclick = () => toggleTopupPackage(pkg, card);
-    container.appendChild(card);
-  });
-}
-
-function loadPSNPackages(region) {
-  const packages = TOPUP_DATA.psn[region];
-  const container = document.getElementById('psnPackages');
-  if (!packages || packages.length === 0) {
-    container.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:30px;color:var(--muted);"><i class="fas fa-exclamation-circle" style="font-size:40px"></i><p>لا توجد باقات</p></div>';
-    return;
-  }
-  container.innerHTML = '';
-  packages.forEach(pkg => {
-    const card = document.createElement('div');
-    card.className = 'package-card';
-    card.setAttribute('data-name', pkg.name);
-    card.setAttribute('data-price', pkg.price);
-    card.innerHTML = `<div class="package-name">${pkg.name}</div><div class="package-price">${pkg.price.toFixed(2)} د.أ</div><div class="package-desc">${pkg.desc || ''}</div>`;
-    card.onclick = () => toggleTopupPackage(pkg, card);
-    container.appendChild(card);
-  });
-}
-
-function selectGame() {
-  const val = document.getElementById('gameSelect').value;
-  if (!val) { selectedPackages = []; updateOrderSummary(); return; }
-  selectedGame = val;
-  document.getElementById('taxWarning').style.display = val === 'roblox' ? 'block' : 'none';
-  loadGamePackages(val);
-  selectedPackages = [];
-  updateOrderSummary();
-}
-
-function selectPSNRegion() {
-  const val = document.getElementById('psnRegion').value;
-  if (!val) { selectedPackages = []; updateOrderSummary(); return; }
-  selectedPSNRegion = val;
-  loadPSNPackages(val);
-  selectedPackages = [];
-  updateOrderSummary();
-}
-
-function toggleTopupPackage(pkg, card) {
-  const exists = selectedPackages.find(p => p.name === pkg.name);
-  if (exists) {
-    selectedPackages = selectedPackages.filter(p => p.name !== pkg.name);
-    card.classList.remove('selected');
-  } else {
-    if (selectedPackages.length >= 3) { showAlert('يمكنك اختيار 3 باقات كحد أقصى', 'warning'); return; }
-    selectedPackages.push(pkg);
-    card.classList.add('selected');
-  }
-  updateOrderSummary();
-}
-
-function applyDiscount(type) {
-  if (type === 'game') {
-    if (gameDiscountApplied) { showAlert('الخصم مفعل مسبقاً', 'info'); return; }
-    if (selectedPackages.length === 0) { showAlert('اختر باقات أولاً', 'warning'); return; }
-    gameDiscountApplied = true;
-    document.getElementById('gameDiscountBtn').classList.add('used');
-    updateOrderSummary();
-    showAlert('تم تطبيق خصم 1.5%', 'success');
-  } else {
-    if (psnDiscountApplied) { showAlert('الخصم مفعل مسبقاً', 'info'); return; }
-    if (selectedPackages.length === 0) { showAlert('اختر باقات أولاً', 'warning'); return; }
-    psnDiscountApplied = true;
-    document.getElementById('psnDiscountBtn').classList.add('used');
-    updateOrderSummary();
-    showAlert('تم تطبيق خصم 1.5%', 'success');
-  }
-}
-
-function updateOrderSummary() {
-  const list = document.getElementById('selectedPackages');
-  const totalEl = document.getElementById('productsTotal');
-  if (selectedPackages.length === 0) {
-    list.innerHTML = '<li>لم يتم اختيار أي باقة</li>';
-    totalEl.innerHTML = 'المجموع: 0.00 د.أ';
-    totalPrice = 0;
-    return;
-  }
-  totalPrice = selectedPackages.reduce((s, p) => s + p.price, 0);
-  if ((selectedCategory === 'games' && gameDiscountApplied) || (selectedCategory === 'psn' && psnDiscountApplied)) {
-    totalPrice = totalPrice * 0.985;
-  }
-  list.innerHTML = '';
-  selectedPackages.forEach(p => {
-    list.innerHTML += `<li><div><div style="font-weight:bold;color:#ff00ff">${p.name}</div><div style="font-size:12px;color:var(--muted)">${p.desc}</div></div><div style="color:var(--gold);font-weight:bold">${p.price.toFixed(2)} د.أ</div></li>`;
-  });
-  totalEl.innerHTML = `المجموع: ${totalPrice.toFixed(2)} د.أ`;
-}
-
-function resetProductSelection() {
-  selectedPackages = [];
-  gameDiscountApplied = false;
-  psnDiscountApplied = false;
-  document.getElementById('gameSelect').selectedIndex = 0;
-  document.getElementById('psnRegion').selectedIndex = 0;
-  document.getElementById('gamePackages').innerHTML = '';
-  document.getElementById('psnPackages').innerHTML = '';
-  document.getElementById('gameDiscountBtn').classList.remove('used');
-  document.getElementById('psnDiscountBtn').classList.remove('used');
-  updateOrderSummary();
-}
-
-function clearOrder() {
-  if (confirm('مسح الطلب بالكامل؟')) {
-    resetProductSelection();
-    document.getElementById('playerId').value = '';
-    document.getElementById('customerName').value = '';
-    document.getElementById('orderEmail').value = '';
-    document.getElementById('orderNotes').value = '';
-    showAlert('تم مسح الطلب', 'success');
+    updateCartSummary();
+    showAlert('🗑️ تم مسح السلة بنجاح', 'success');
   }
 }
 
 function submitOrder() {
-  const playerId = document.getElementById('playerId').value.trim();
-  const customerName = document.getElementById('customerName').value.trim();
-  const email = document.getElementById('orderEmail').value.trim();
-  if (!playerId || !customerName || !email) { showAlert('املأ جميع الحقول', 'error'); return; }
-  if (selectedPackages.length === 0) { showAlert('اختر باقة', 'error'); return; }
-  if (!validateEmail(email)) { showAlert('بريد إلكتروني غير صحيح', 'error'); return; }
+  const name = document.getElementById('customerName').value.trim();
+  const email = document.getElementById('customerEmail').value.trim();
+  if (!name || !email) { showAlert('❌ يرجى إدخال اسمك وبريدك الإلكتروني', 'error'); return; }
+  if (!validateEmail(email)) { showAlert('❌ البريد الإلكتروني غير صحيح', 'error'); return; }
+  if (selectedGames.length === 0 && selectedFiles.length === 0) { showAlert('❌ يرجى اختيار منتج واحد على الأقل', 'error'); return; }
   
-  let details = `🎮 **طلب جديد من MR Store**\n\n📅 **التاريخ:** ${new Date().toLocaleString('ar-JO')}\n\n`;
-  details += `👤 **معلومات الزبون:**\n🆔 **اللاعب:** ${playerId}\n👨 **اسم الزبون:** ${customerName}\n📧 **البريد:** ${email}\n\n`;
+  const gamePrice = getGamePrice();
+  const gamesTotal = selectedGames.length * gamePrice;
+  const filesTotal = selectedFiles.reduce((s, f) => s + f.price, 0);
+  const total = gamesTotal + filesTotal;
+  
+  let details = `🎮 **طلب جديد من PS Store**\n`;
+  details += `📅 **التاريخ:** ${new Date().toLocaleString('ar-JO')}\n\n`;
+  details += `👤 **معلومات العميل:**\n`;
+  details += `👨 **الاسم:** ${name}\n`;
+  details += `📧 **البريد:** ${email}\n\n`;
   details += `🛒 **المنتجات المطلوبة:**\n`;
-  if (selectedCategory === 'games') {
-    const gameName = document.getElementById('gameSelect').options[document.getElementById('gameSelect').selectedIndex]?.text || '';
-    details += `🎮 **اسم اللعبة:** ${gameName}\n`;
-  } else {
-    const regionName = document.getElementById('psnRegion').options[document.getElementById('psnRegion').selectedIndex]?.text || '';
-    const delivery = document.getElementById('psnDelivery').value;
-    details += `🎴 **نوع PSN:** ${regionName}\n📨 **طريقة الاستلام:** ${delivery}\n`;
+  details += `🎮 **الجهاز:** ${currentConsole === 'ps4' ? 'PS4' : 'PS3'}\n`;
+  if (selectedGames.length > 0) {
+    details += `\n🎮 **الألعاب (${selectedGames.length}):**\n`;
+    selectedGames.forEach(g => details += `   • ${g}\n`);
   }
-  selectedPackages.forEach((p, i) => { details += `\n${i+1}. **${p.name}** - ${p.price.toFixed(2)} د.أ\n`; });
-  details += `\n💰 **المجموع:** ${totalPrice.toFixed(2)} دينار أردني\n`;
+  if (selectedFiles.length > 0) {
+    details += `\n📁 **ملفات التعديل (${selectedFiles.length}):**\n`;
+    selectedFiles.forEach(f => details += `   • ${f.name}\n`);
+  }
+  details += `\n💰 **المجموع:** ${total.toFixed(2)} دينار أردني\n\n`;
   const notes = document.getElementById('orderNotes').value.trim();
-  if (notes) details += `\n📝 **ملاحظات:**\n${notes}\n`;
-  details += `\n---\n💳 **طريقة الدفع:** UWallet\n👤 **الاسم المستعار:** MRSDFOR\n📱 **إنستغرام:** mrsdfor store\n📧 **البريد:** mrsdforstore@gmail.com`;
+  if (notes) details += `📝 **ملاحظات:**\n${notes}\n\n`;
+  details += `---\n💳 **طريقة الدفع:** UWallet\n👤 **الاسم المستعار:** MRSDFOR\n📱 **إنستغرام:** @mrsdfor\n📧 **البريد الإلكتروني:** mrsdforstore@gmail.com\n\n📌 **بعد الدفع، يرجى إرسال إيصال الدفع على البريد الإلكتروني مع رقم الطلب**`;
   
-  document.getElementById('orderDetails').innerHTML = `<pre style="white-space:pre-wrap;font-size:13px;line-height:1.5">${details}</pre>`;
+  document.getElementById('orderDetails').innerHTML = `<pre style="white-space:pre-wrap;font-size:12px;line-height:1.5">${details}</pre>`;
   document.getElementById('orderModal').style.display = 'flex';
   
-  const order = { id: Date.now(), details: details, total: totalPrice, date: new Date().toISOString(), items: customerName };
-  guestInfo.orders = guestInfo.orders || [];
-  guestInfo.orders.push(order);
-  guestInfo.totalSpent = (guestInfo.totalSpent || 0) + totalPrice;
-  localStorage.setItem('mrStoreGuest', JSON.stringify(guestInfo));
-  updateProfileDisplay();
+  const order = { id: Date.now(), details: details, total: total, date: new Date().toISOString(), items: `${selectedGames.length} لعبة | ${selectedFiles.length} ملف` };
+  customerOrders.push(order);
+  localStorage.setItem('ps_customer', JSON.stringify({ name, email, orders: customerOrders }));
+  updateOrderHistory();
 }
 
-// ================= وظائف عامة =================
+// ========== المساعد الذكي المحسن ==========
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  if (!message) return;
+  
+  addMessage(message, 'user');
+  input.value = '';
+  
+  const typingDiv = showTypingIndicator();
+  setTimeout(() => {
+    removeTypingIndicator(typingDiv);
+    const reply = getSmartReply(message);
+    addMessage(reply, 'bot');
+  }, 600);
+}
+
+function quickQuestion(question) {
+  document.getElementById('chatInput').value = question;
+  sendMessage();
+}
+
+function addMessage(text, sender) {
+  const container = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = `message ${sender}`;
+  div.innerHTML = `
+    <div class="message-avatar"><i class="fas ${sender === 'user' ? 'fa-user' : 'fa-robot'}"></i></div>
+    <div class="message-content">${text}</div>
+  `;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function showTypingIndicator() {
+  const container = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'message bot';
+  div.id = 'typingIndicator';
+  div.innerHTML = `
+    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+    <div class="typing-indicator"><span></span><span></span><span></span></div>
+  `;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+  return div;
+}
+
+function removeTypingIndicator(div) {
+  if (div && div.parentNode) div.remove();
+}
+
+function getSmartReply(message) {
+  const msg = message.toLowerCase();
+  
+  // التحية
+  if (msg.match(/^(مرحب|اهلا|السلام|هلا|هاي|hi|hello)/i)) {
+    return "🎮 أهلاً بك في PS Store! أنا مساعدك الذكي. كيف يمكنني مساعدتك اليوم؟\n\n💡 يمكنني مساعدتك في:\n• معرفة أسعار الألعاب\n• شرح طريقة الدفع عبر UWallet\n• حل المشاكل التقنية\n• متابعة الطلبات\n• التواصل مع الدعم";
+  }
+  
+  // الأسعار
+  if (msg.match(/سعر|ثمن|كم|دينار|تكلفة|بكم/i)) {
+    return "💰 **أسعار المنتجات:**\n\n🎮 **PS4:** 2 دينار للعبة\n🎮 **PS3:** 1 دينار للعبة\n📁 **ملفات التعديل:** 0.5 دينار لكل ملف\n\n🔹 يمكنك اختيار الألعاب من قسم المتجر وإضافتها للسلة";
+  }
+  
+  // طريقة الشراء
+  if (msg.match(/اشتري|شراء|كيف اشتري|طريقة الشراء|اطلب/i)) {
+    return "🛒 **كيف تطلب؟**\n\n1️⃣ اختر الجهاز (PS4 أو PS3)\n2️⃣ اختر الألعاب التي تريدها\n3️⃣ أضف ملفات التعديل إن أردت\n4️⃣ املأ معلوماتك (الاسم والبريد)\n5️⃣ اضغط على 'تأكيد الطلب'\n6️⃣ انسخ تفاصيل الطلب وأرسلها على البريد الإلكتروني\n7️⃣ قم بالدفع عبر UWallet على الاسم MRSDFOR\n8️⃣ أرسل إيصال الدفع على البريد mrsdforstore@gmail.com";
+  }
+  
+  // الدفع
+  if (msg.match(/دفع|uwallet|كيف ادفع|طريقة الدفع|pay/i)) {
+    return "💳 **طريقة الدفع عبر UWallet:**\n\n1️⃣ افتح تطبيق UWallet\n2️⃣ اختر 'تحويل أموال'\n3️⃣ أدخل الاسم المستعار: **MRSDFOR**\n4️⃣ أدخل المبلغ المطلوب\n5️⃣ أكد العملية\n6️⃣ أرسل إيصال الدفع على البريد الإلكتروني mrsdforstore@gmail.com\n\n📌 ملاحظة: الدفع يكون مقدماً قبل إرسال المنتجات";
+  }
+  
+  // وقت التسليم
+  if (msg.match(/وقت|مدة|تسليم|استلام|متى اوصل|متى/i)) {
+    return "⏱️ **وقت التسليم:**\n\n• بعد تأكيد الدفع وإرسال الإيصال، يتم تجهيز الطلب خلال 5-30 دقيقة\n• سيتم إرسال روابط التحميل على بريدك الإلكتروني\n• في حال تأخر الرد، يمكنك التواصل عبر إنستغرام @mrsdfor";
+  }
+  
+  // ملفات التعديل
+  if (msg.match(/تعديل|هن|hen|ملفات|payload|custom/i)) {
+    return "📁 **ملفات التعديل المتوفرة:**\n\n• HEN Payload لجميع إصدارات PS4 (4.90 - 9.00)\n• PS3 HEN Toolbox\n• MultiMAN - مدير الملفات\n• webMAN MOD\n• PS3 Game Manager\n• PS4 Debug Settings\n• PS4 FTP Server\n\n💰 السعر: 0.5 دينار لكل ملف";
+  }
+  
+  // الألعاب المتوفرة
+  if (msg.match(/العاب|games|قائمة|available|موجود/i)) {
+    return "🎮 **الألعاب المتوفرة:**\n\n• **PS4:** أكثر من 60 لعبة (God of War, Spider Man, GTA V, Elden Ring, وغيرها)\n• **PS3:** أكثر من 50 لعبة (The Last of Us, Uncharted, GTA IV, وغيرها)\n\n🔍 يمكنك البحث عن لعبة معينة في قسم المتجر باستخدام مربع البحث أو أزرار الحروف";
+  }
+  
+  // المشاكل التقنية
+  if (msg.match(/مشكلة|عطل|خطأ|مافيه|لا يعمل|error|bug/i)) {
+    return "⚠️ **حل المشاكل التقنية:**\n\n1️⃣ تأكد من أن جهازك يدعم HEN\n2️⃣ تحقق من إصدار النظام\n3️⃣ أعد تشغيل الجهاز وحاول مرة أخرى\n4️⃣ تأكد من اتباع خطوات التثبيت بشكل صحيح\n\n🔹 إذا استمرت المشكلة، أرسل لنا تفاصيل أكثر على البريد الإلكتروني mrsdforstore@gmail.com وسنساعدك";
+  }
+  
+  // التواصل مع الدعم
+  if (msg.match(/تواصل|اتصل|دعم|support|help|مساعدة/i)) {
+    return "📞 **طرق التواصل مع الدعم:**\n\n📧 **البريد الإلكتروني:** mrsdforstore@gmail.com\n📱 **إنستغرام:** @mrsdfor\n\n🕐 وقت الرد: عادة خلال 5-30 دقيقة\n\n📌 يرجى إرفاق رقم الطلب أو إيصال الدفع عند التواصل";
+  }
+  
+  // طلباتي
+  if (msg.match(/طلباتي|طلبات سابقة|history|سجل/i)) {
+    return "📋 **طلباتي السابقة:**\n\nيمكنك مشاهدة جميع طلباتك السابقة بالضغط على تبويب 'طلباتي' في القائمة العلوية. ستجد هناك تاريخ الطلبات والمبالغ المدفوعة.";
+  }
+  
+  // شكر
+  if (msg.match(/شكر|thanks|thank you/i)) {
+    return "🙏 العفو! شكراً لثقتك بنا. تحت أمرك دائماً. هل هناك شيء آخر يمكنني مساعدتك به؟";
+  }
+  
+  // الرد الافتراضي
+  return "🤔 عذراً، لم أفهم سؤالك تماماً. يمكنك تجربة أحد الأسئلة المقترحة أدناه، أو إعادة صياغة سؤالك.\n\n💡 **أسئلة مقترحة:**\n• ما هي أسعار الألعاب؟\n• كيف أشتري ألعاب PS4؟\n• كيف أدفع عبر UWallet؟\n• ما هي ملفات التعديل؟\n• مشكلة في التحميل أو التثبيت\n• كم مدة التسليم؟\n• كيف أتواصل مع الدعم؟\n\nأو تواصل معنا مباشرة على mrsdforstore@gmail.com";
+}
+
+// ========== وظائف عامة ==========
 function showSection(sectionId) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(sectionId + 'Section').classList.add('active');
   const btn = document.querySelector(`.nav-btn[onclick="showSection('${sectionId}')"]`);
   if (btn) btn.classList.add('active');
-  if (sectionId === 'products') resetProductSelection();
+  if (sectionId === 'store') updateCartSummary();
 }
 
 function copyOrder() {
@@ -1921,8 +1674,7 @@ function copyOrder() {
 
 function openOrderEmail() {
   const text = document.querySelector('#orderDetails pre')?.textContent || '';
-  const subject = encodeURIComponent('طلب جديد - MR Store');
-  window.open(`mailto:mrsdforstore@gmail.com?subject=${subject}&body=${encodeURIComponent(text)}`, '_blank');
+  window.open(`mailto:mrsdforstore@gmail.com?subject=طلب جديد من PS Store&body=${encodeURIComponent(text)}`, '_blank');
 }
 
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
@@ -1932,7 +1684,7 @@ function showAlert(msg, type) {
   if (existing) existing.remove();
   const div = document.createElement('div');
   div.className = `alert alert-${type}`;
-  div.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i><span>${msg}</span>`;
+  div.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i><span>${msg}</span>`;
   document.body.appendChild(div);
   setTimeout(() => { div.remove(); }, 3500);
 }
@@ -1940,12 +1692,17 @@ function showAlert(msg, type) {
 function validateEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
 
 function copyToClipboard(text) {
-  navigator.clipboard.writeText(text).then(() => showAlert('تم النسخ', 'success')).catch(() => showAlert('فشل النسخ', 'error'));
+  navigator.clipboard.writeText(text).then(() => showAlert('📋 تم النسخ إلى الحافظة!', 'success')).catch(() => showAlert('❌ فشل النسخ', 'error'));
 }
 
-window.onload = function() {
-  setTimeout(() => showAlert('مرحباً بك في MR Store!', 'info'), 500);
-};
+// ========== التهيئة ==========
+document.addEventListener('DOMContentLoaded', function() {
+  loadData();
+  buildLetterNav();
+  loadFilesGrid();
+  filterGames();
+  showAlert('🎮 مرحباً بك في PS Store!', 'info');
+});
 </script>
 </body>
 </html>
